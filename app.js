@@ -1,10 +1,12 @@
-const fs = require("fs");
-const files = fs.readdirSync("./");
-console.log("this is sync function : ", files);
-fs.readdir("./", function (err, result) {
-	if (err) {
-		console.log("Error ta dekh :", err);
-	} else {
-		console.log("Result :", result);
-	}
+// Event module in node js
+
+const EventEmitter = require("events");
+
+const emitter = new EventEmitter();
+
+// register an event
+emitter.on("logedIn", (arg) => {
+	console.log(`log in hoise.... `, arg);
 });
+// raise events
+emitter.emit("logedIn", { id: 2, url: "google.com" });
