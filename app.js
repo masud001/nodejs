@@ -1,11 +1,9 @@
-// Event module in node js
-
-const EventEmitter = require("events");
-const emitter = new EventEmitter();
+const Logger = require("./logger");
+const logger = new Logger();
 
 // register an event
-emitter.on("logedIn", (arg) => {
+logger.on("logedIn", (arg) => {
 	console.log(`log in hoise.... `, arg);
 });
-// raise events
-emitter.emit("logedIn", { id: 2, url: "google.com" });
+
+logger.log("this is my message");
