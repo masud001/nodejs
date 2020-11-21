@@ -1,9 +1,7 @@
-const Logger = require("./logger");
-const logger = new Logger();
+const http = require("http");
 
-// register an event
-logger.on("logedIn", (arg) => {
-	console.log(`log in hoise.... `, arg);
-});
+const server = http.createServer();
 
-logger.log("this is my message");
+server.listen(3000);
+
+console.log("listening on port 3000....");
