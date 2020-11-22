@@ -14,8 +14,8 @@ app.get("/api/courses", (req, res) => {
 });
 
 // route for single course with ID
-app.get("/api/courses/:id", (req, res) => {
-	res.send(req.params.id);
+app.get("/api/courses/:year/:month", (req, res) => {
+	res.send(req.params);
 });
 
 let port = process.env.PORT || 5000;
